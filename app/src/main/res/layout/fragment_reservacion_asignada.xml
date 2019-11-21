@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".reservacion_asignada"
+    android:background="@color/colorWhite">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="Tienes una nueva reservación, estos son los datos." />
+
+    <TextView
+        android:id="@+id/datosReservacionTitle"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="Datos de reservación" />
+
+    <TextView
+        android:id="@+id/folioReservacionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/datosReservacionTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Folio de reservación:"/>
+
+    <TextView
+        android:id="@+id/folioReservacionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/datosReservacionTitle"
+        app:layout_constraintLeft_toRightOf="@+id/folioReservacionTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="RE023"/>
+
+    <TextView
+        android:id="@+id/choferTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/folioReservacionTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Chofer:"/>
+
+    <TextView
+        android:id="@+id/choferText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/folioReservacionTitle"
+        app:layout_constraintLeft_toRightOf="@+id/choferTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="CH002"/>
+
+    <TextView
+        android:id="@+id/camionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/choferTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Camión:"/>
+
+    <TextView
+        android:id="@+id/camionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/choferTitle"
+        app:layout_constraintLeft_toRightOf="@+id/camionTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="GDE002"/>
+
+    <TextView
+        android:id="@+id/detalleReservacionTitle"
+        app:layout_constraintTop_toBottomOf="@id/camionTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="Detalle de reservación" />
+
+    <TextView
+        android:id="@+id/sedeOrigenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/detalleReservacionTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Sede origen:"/>
+
+    <TextView
+        android:id="@+id/sedeOrigenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/detalleReservacionTitle"
+        app:layout_constraintLeft_toRightOf="@+id/sedeOrigenTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="Culiacán"/>
+
+    <TextView
+        android:id="@+id/sedeDestinoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sedeOrigenText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Sede destino:"/>
+
+    <TextView
+        android:id="@+id/sedeDestinoTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sedeOrigenText"
+        app:layout_constraintLeft_toRightOf="@+id/sedeDestinoTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="Los Mochis"/>
+
+    <TextView
+        android:id="@+id/fechaReservacionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sedeDestinoTitleText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Fecha de reservación:"/>
+
+    <TextView
+        android:id="@+id/fechaReservacionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/sedeDestinoTitleText"
+        app:layout_constraintLeft_toRightOf="@+id/fechaReservacionTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="17/12/ 2019"/>
+
+    <TextView
+        android:id="@+id/datosClienteTitle"
+        app:layout_constraintTop_toBottomOf="@id/fechaReservacionTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="Datos del ciente" />
+
+    <TextView
+        android:id="@+id/nombreCompletoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/datosClienteTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Nombre completo:"/>
+
+    <TextView
+        android:id="@+id/nombreCompletoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/datosClienteTitle"
+        app:layout_constraintLeft_toRightOf="@+id/nombreCompletoTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="Guillermo Márquez Ruiz"/>
+
+    <TextView
+        android:id="@+id/celularTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/nombreCompletoTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Celular:"/>
+
+    <TextView
+        android:id="@+id/celularText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/nombreCompletoTitle"
+        app:layout_constraintLeft_toRightOf="@+id/celularTitle"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorFont"
+        android:textAlignment="textStart"
+        android:textSize="14dp"
+        android:text="6673515152"/>
+
+    <Button
+        android:id="@+id/btnReportarExceso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reportar exceso"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"/>
+
+</android.support.constraint.ConstraintLayout>

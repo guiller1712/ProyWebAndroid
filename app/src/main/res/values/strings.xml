@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProyWebTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_text_fragment">Has cumplido con tu reservación aseignada. Espera a que tu administrador te asigne otra.</string>
+</resources>
