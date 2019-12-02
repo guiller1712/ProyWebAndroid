@@ -63,38 +63,12 @@
         android:textSize="14dp"
         android:text="RE023"/>
 
-    <TextView
-        android:id="@+id/choferTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/folioReservacionTitle"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:paddingLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorFont"
-        android:textAlignment="textStart"
-        android:textSize="14dp"
-        android:textStyle="bold"
-        android:text="Chofer:"/>
-
-    <TextView
-        android:id="@+id/choferText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/folioReservacionTitle"
-        app:layout_constraintLeft_toRightOf="@+id/choferTitle"
-        android:paddingLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/colorFont"
-        android:textAlignment="textStart"
-        android:textSize="14dp"
-        android:text="CH002"/>
 
     <TextView
         android:id="@+id/camionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/choferTitle"
+        app:layout_constraintTop_toBottomOf="@+id/folioReservacionTitle"
         app:layout_constraintLeft_toLeftOf="parent"
         android:paddingLeft="16dp"
         android:layout_marginTop="8dp"
@@ -108,7 +82,7 @@
         android:id="@+id/camionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/choferTitle"
+        app:layout_constraintTop_toBottomOf="@+id/folioReservacionTitle"
         app:layout_constraintLeft_toRightOf="@+id/camionTitle"
         android:paddingLeft="16dp"
         android:layout_marginTop="8dp"

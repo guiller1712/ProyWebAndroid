@@ -10,7 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.proywebtest.Models.Chofer;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -37,7 +40,22 @@ public class chofer extends Fragment implements View.OnClickListener {
 
     private static final String STRING_PREFERENCES = "com.example.proywebtest";
     private static final String CELULAR_USER = "user.telefonouser";
+
+    private TextView correoChoferText;
+    private TextView celularChoferText;
+    private TextView choferTitle;
     private Button btnCerrarSesion;
+
+    private static final String TOKEN_CHOFER = "chofer.token";
+    private static final String NOMBRE_CHOFER = "chofer.nombre";
+    private static final String PRIMER_CHOFER = "chofer.primer";
+    private static final String SEGUNDO_CHOFER = "chofer.segundo";
+    private static final String TELEFONO_CHOFER = "chofer.telefono";
+    private static final String CORREO_CHOFER = "chofer.correo";
+    private static final String ROL_CHOFER = "chofer.rol";
+
+    private static final String RESERVACION_EXCESO = "reservacion.exceso";
+    private static final String RESERVACION_FOLIO = "reservacion.folio";
 
     public chofer() {
         // Required empty public constructor
@@ -98,8 +116,19 @@ public class chofer extends Fragment implements View.OnClickListener {
     @Override
     public void onStart() {
         super.onStart();
+        Chofer c = obtieneChofer();
         btnCerrarSesion = (Button) getView().findViewById(R.id.btnCerrarSesion);
+
+        choferTitle = (TextView) getView().findViewById(R.id.choferTitle);
+        String title = choferTitle.getText().toString();
+        choferTitle.setText(title + " " + c.getNombre() + " " + c.getPrimerApellido());
+        correoChoferText = (TextView) getView().findViewById(R.id.correoChoferText);
+        correoChoferText.setText(c.getCorreoElectronico());
+        celularChoferText = (TextView) getView().findViewById(R.id.celularChoferText);
+        celularChoferText.setText(c.getTelefono());
+
         btnCerrarSesion.setOnClickListener(this);
+
     }
 
     @Override
@@ -110,7 +139,7 @@ public class chofer extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        cerrarSesionUser();
+        cerrarSesionChofer();
         Intent i = new Intent(getActivity(), MainActivity.class);
         Toast.makeText(this.getActivity().getBaseContext(), "Has cerrado sesión", Toast.LENGTH_LONG).show();
         startActivity(i);
@@ -121,6 +150,32 @@ public class chofer extends Fragment implements View.OnClickListener {
     private void cerrarSesionUser(){
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences(STRING_PREFERENCES, MODE_PRIVATE);
         sharedPreferences.edit().putString(CELULAR_USER, "0000000000").apply();
+    }
+
+    private Chofer obtieneChofer(){
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(STRING_PREFERENCES, MODE_PRIVATE);
+        Chofer c = new Chofer(
+                sharedPreferences.getString(NOMBRE_CHOFER, "nombre"),
+                sharedPreferences.getString(PRIMER_CHOFER, "primer"),
+                sharedPreferences.getString(SEGUNDO_CHOFER, "segundo"),
+                sharedPreferences.getString(TELEFONO_CHOFER, "telefono"),
+                sharedPreferences.getString(CORREO_CHOFER, "correo"),
+                sharedPreferences.getString(ROL_CHOFER, "rol"));
+        return c;
+    }
+
+    private void cerrarSesionChofer(){
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(STRING_PREFERENCES, MODE_PRIVATE);
+        sharedPreferences.edit().putString(TOKEN_CHOFER, "0000000000").apply();
+        sharedPreferences.edit().putString(NOMBRE_CHOFER, "0000000000").apply();
+        sharedPreferences.edit().putString(PRIMER_CHOFER, "0000000000").apply();
+        sharedPreferences.edit().putString(SEGUNDO_CHOFER, "0000000000").apply();
+        sharedPreferences.edit().putString(TELEFONO_CHOFER, "0000000000").apply();
+        sharedPreferences.edit().putString(CORREO_CHOFER, "0000000000").apply();
+        sharedPreferences.edit().putString(ROL_CHOFER, "0000000000").apply();
+
+        sharedPreferences.edit().putBoolean(RESERVACION_EXCESO, false).apply();
+        sharedPreferences.edit().putString(RESERVACION_FOLIO, "0000000000").apply();
     }
 
     /**

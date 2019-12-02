@@ -7,10 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import com.example.proywebtest.Models.Chofer;
+
 public class Splash extends AppCompatActivity {
 
     private static final String STRING_PREFERENCES = "com.example.proywebtest";
     private static final String CELULAR_USER = "user.telefonouser";
+
+    private static final String TOKEN_CHOFER = "chofer.token";
+    private static final String NOMBRE_CHOFER = "chofer.nombre";
+    private static final String PRIMER_CHOFER = "chofer.primer";
+    private static final String SEGUNDO_CHOFER = "chofer.segundo";
+    private static final String TELEFONO_CHOFER = "chofer.telefono";
+    private static final String CORREO_CHOFER = "chofer.correo";
+    private static final String ROL_CHOFER = "chofer.rol";
     private static int SPLASH_SCREEN_TIME_OUT=2000;
 
     @Override
@@ -29,7 +39,7 @@ public class Splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                String telefonouser = obtenerSesionUsuario();
+                String telefonouser = obtieneChofer().getCorreoElectronico();
                 if (telefonouser.equals("0000000000")){
                     Intent i = new Intent(Splash.this,
                             MainActivity.class);
@@ -49,5 +59,17 @@ public class Splash extends AppCompatActivity {
     private String obtenerSesionUsuario(){
         SharedPreferences sharedPreferences = getSharedPreferences(STRING_PREFERENCES, MODE_PRIVATE);
         return sharedPreferences.getString(CELULAR_USER, "0000000000");
+    }
+
+    private Chofer obtieneChofer(){
+        SharedPreferences sharedPreferences = getSharedPreferences(STRING_PREFERENCES, MODE_PRIVATE);
+        Chofer c = new Chofer(
+                sharedPreferences.getString(NOMBRE_CHOFER, "nombre"),
+                sharedPreferences.getString(PRIMER_CHOFER, "primer"),
+                sharedPreferences.getString(SEGUNDO_CHOFER, "segundo"),
+                sharedPreferences.getString(TELEFONO_CHOFER, "telefono"),
+                sharedPreferences.getString(CORREO_CHOFER, "correo"),
+                sharedPreferences.getString(ROL_CHOFER, "rol"));
+        return c;
     }
 }

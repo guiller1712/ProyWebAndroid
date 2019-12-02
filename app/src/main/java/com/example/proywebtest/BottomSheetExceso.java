@@ -27,6 +27,7 @@ public class BottomSheetExceso extends BottomSheetDialogFragment implements View
         return view;
     }
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -35,7 +36,7 @@ public class BottomSheetExceso extends BottomSheetDialogFragment implements View
                 dismiss();
                 break;
             case R.id.btnYes:
-                bottomSheetListener.onBottomClick(true );
+                bottomSheetListener.setExceso("8");//Obtener el folio de la consulta de reservacion
                 dismiss();
                 break;
         }
@@ -43,6 +44,7 @@ public class BottomSheetExceso extends BottomSheetDialogFragment implements View
 
     public interface BottomSheetListener{
         void onBottomClick(boolean exceso);
+        void setExceso(String folio);
     }
 
     @Override
